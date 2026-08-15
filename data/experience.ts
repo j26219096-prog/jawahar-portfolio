@@ -4,6 +4,7 @@ export interface ExperienceItem {
   organization: string;
   period: string;
   type: "internship" | "project" | "hackathon";
+  programmeType?: string;
   description: string;
   highlights: string[];
   badge?: string;
@@ -19,8 +20,9 @@ export const experiences: ExperienceItem[] = [
     organization: "EduSkills · Supported by Google Cloud",
     period: "June – August 2026",
     type: "internship",
+    programmeType: "Virtual Training Programme · AICTE National Internship Portal",
     description:
-      "Completed an 8-week cloud data analytics programme under the AICTE National Internship Portal. Worked through real-world data workflows using BigQuery, cloud storage, and SQL-based analytics — finishing with an Outstanding grade, the programme's top tier.",
+      "Completed an 8-week structured cloud data analytics programme under the AICTE National Internship Portal. Worked through real-world data workflows using BigQuery, cloud storage, and SQL-based analytics — finishing with an Outstanding grade, the programme's top tier.",
     highlights: [
       "Completed structured modules covering BigQuery, data warehousing, and cloud-native analytics",
       "Applied SQL and cloud tools on hands-on assessments throughout the programme",
@@ -41,6 +43,7 @@ export const experiences: ExperienceItem[] = [
     organization: "AICTE + EduSkills + Google for Developers",
     period: "October – December 2025",
     type: "internship",
+    programmeType: "Virtual Training Programme · AICTE",
     description:
       "Completed a 10-week AI and machine learning programme delivered jointly by AICTE, EduSkills, and Google for Developers. Studied supervised learning, computer vision, and model evaluation — applying concepts through assessed project modules built with Google Developer tooling.",
     highlights: [

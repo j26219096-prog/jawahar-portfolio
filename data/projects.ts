@@ -16,17 +16,17 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "flow-matrix",
-    title: "FlowMatrix: End-to-End E-Commerce Data Pipeline",
+    title: "FlowMatrix: End-to-End E-Commerce ELT Pipeline",
     organization: "Open Source",
     period: "Jun 2026 – Jul 2026",
     shortDescription:
-      "Scalable data pipeline processing 100K+ transaction records, simulating a high-volume retail environment.",
+      "A local end-to-end ELT pipeline simulating retail order flows — from Kafka ingestion through PySpark transforms to a PostgreSQL warehouse with a live Streamlit dashboard.",
     description: [
-      "Designed a production-ready ELT pipeline that handles order events from ingestion through warehouse loading, modeled on real e-commerce traffic patterns.",
-      "Built real-time stream ingestion with Apache Kafka, managing high-throughput order events with fault-tolerant consumer groups.",
-      "Wrote distributed PySpark transformation jobs to clean, validate, and enrich raw event data before loading.",
-      "Orchestrated the full workflow with Apache Airflow and dbt, loading analytics-ready data into a serverless Neon PostgreSQL warehouse.",
-      "Enforced data quality contracts using Great Expectations and surfaced GMV trends on a custom Streamlit dashboard.",
+      "Designed and implemented a complete ELT pipeline modeled on e-commerce order workflows, simulating retail event patterns across ingestion, transformation, and warehouse loading stages.",
+      "Built a stream ingestion layer with Apache Kafka, using consumer groups to read order events with configurable fault tolerance settings.",
+      "Wrote PySpark transformation jobs to clean, deduplicate, and enrich raw event records, applying schema validation before loading.",
+      "Orchestrated the pipeline with Apache Airflow DAGs and structured data models with dbt, loading analytics-ready tables into a free-tier Neon PostgreSQL instance.",
+      "Enforced data quality checks using Great Expectations and built a Streamlit dashboard to surface GMV trends and data freshness metrics.",
     ],
     techStack: [
       "Python",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     organization: "Open Source",
     period: "Feb 2026 – Mar 2026",
     shortDescription:
-      "Automated ETL pipeline capturing and visualising weather and AQI metrics across 5 global cities.",
+      "Automated ETL pipeline capturing and visualising live weather and AQI metrics across 5 global cities.",
     description: [
       "Built a scheduled Python pipeline to extract live weather and air quality data from the OpenWeatherMap API on a recurring cadence.",
       "Applied data cleaning and normalisation transforms to standardise metrics across cities before storage.",

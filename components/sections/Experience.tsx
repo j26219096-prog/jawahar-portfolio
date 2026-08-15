@@ -104,11 +104,19 @@ export default function Experience() {
                     {exp.role}
                   </h3>
                   <p
-                    className="text-sm font-medium mb-3"
+                    className="text-sm font-medium mb-0.5"
                     style={{ color: "var(--text-muted)" }}
                   >
                     {exp.organization}
                   </p>
+                  {exp.programmeType && (
+                    <p
+                      className="text-xs italic mb-3"
+                      style={{ color: "var(--text-muted)", opacity: 0.65 }}
+                    >
+                      {exp.programmeType}
+                    </p>
+                  )}
 
                   {exp.badge && (
                     <div

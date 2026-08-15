@@ -16,14 +16,14 @@ export const skillGroups: SkillGroup[] = [
     skills: ["FastAPI", "Uvicorn", "Three.js", "REST APIs"],
   },
   {
-    category: "Data Engineering",
+    category: "Cloud & Warehousing",
     icon: "database",
     skills: [
-      "ETL Pipelines",
-      "Data Ingestion",
-      "Data Caching",
-      "API Design",
-      "Real-Time Processing",
+      "Google BigQuery",
+      "Google Cloud Platform",
+      "AWS",
+      "PostgreSQL (Neon)",
+      "SQL Analytics",
     ],
   },
   {
@@ -37,21 +37,32 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "Git",
       "GitHub",
-      "GitHub Pages",
-      "Render",
+      "Docker",
+      "GitHub Actions",
       "VS Code",
-      "Google Analytics",
       "Excel",
       "Google Sheets",
+    ],
+  },
+  {
+    category: "Data Engineering",
+    icon: "database",
+    skills: [
+      "Apache Kafka",
+      "Apache Spark (PySpark)",
+      "Apache Airflow",
+      "dbt",
+      "ETL / ELT Pipelines",
+      "Data Ingestion",
+      "Data Quality (Great Expectations)",
+      "Real-Time Stream Processing",
     ],
   },
 ];
 
 export const exploringSkills: string[] = [
-  "Apache Kafka",
-  "Apache Spark",
-  "Apache Airflow",
-  "AWS",
-  "dbt",
+  "Databricks",
+  "AWS Glue / Redshift",
+  "Advanced Distributed Systems",
   "Japanese (JLPT N5)",
 ];

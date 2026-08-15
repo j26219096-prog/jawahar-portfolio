@@ -5,6 +5,7 @@ import { ExternalLink, ChevronDown, ChevronRight, Folder } from "lucide-react";
 import { GitHubIcon } from "@/components/ui/Icons";
 import { projects, Project } from "@/data/projects";
 import SectionHeader from "@/components/ui/SectionHeader";
+import FlowMatrixDiagram from "@/components/ui/FlowMatrixDiagram";
 import { useState } from "react";
 
 function ProjectFolder({ project, isOpen, onToggle, index }: { project: Project; isOpen: boolean; onToggle: () => void; index: number }) {
@@ -55,6 +56,9 @@ function ProjectFolder({ project, isOpen, onToggle, index }: { project: Project;
                   </p>
                 ))}
               </div>
+
+              {/* Architecture diagram for FlowMatrix only */}
+              {project.id === "flow-matrix" && <FlowMatrixDiagram />}
 
               <div className="mb-6">
                 <h4 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-3">

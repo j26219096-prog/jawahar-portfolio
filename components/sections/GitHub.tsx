@@ -25,12 +25,16 @@ export default function GitHubSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
           {repoProjects.map((project, i) => (
-            <a
+            <motion.a
               key={project.id}
               href={project.repoUrl!}
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card p-5 flex flex-col gap-3 cursor-pointer h-full"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-60px" }}
+              transition={{ delay: i * 0.08, duration: 0.4 }}
             >
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-2">
@@ -69,15 +73,21 @@ export default function GitHubSection() {
                   </span>
                 ))}
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
 
         <div className="w-full h-8 bg-transparent" />
 
         {/* Profile link */}
+        <a
+          href={profile.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
         <motion.div
-          className="flex flex-col sm:flex-row items-center gap-4 glass-card p-5 mt-10"
+          className="flex flex-col sm:flex-row items-center gap-4 glass-card p-5 mt-10 cursor-pointer hover:bg-white/5 transition-colors duration-200"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
@@ -105,10 +115,7 @@ export default function GitHubSection() {
             </div>
           </div>
           <div className="sm:ml-auto">
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
+            <span
               className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
               style={{
                 background: "rgba(255,255,255,0.04)",
@@ -118,9 +125,10 @@ export default function GitHubSection() {
             >
               <GitHubIcon size={15} />
               View Full Profile
-            </a>
+            </span>
           </div>
         </motion.div>
+        </a>
       </div>
     </section>
   );
