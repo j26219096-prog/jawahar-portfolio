@@ -34,7 +34,9 @@ export default function GitHubSection() {
             >
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-2">
-                  <GitHubIcon size={16} style={{ color: "var(--text-muted)" }} />
+                  <div className="w-6 h-6 shrink-0 bg-white rounded flex items-center justify-center shadow-sm">
+                    <GitHubIcon size={14} className="text-[#171515]" />
+                  </div>
                   <span
                     className="text-sm font-semibold"
                     style={{ color: "var(--text-primary)" }}
@@ -83,13 +85,12 @@ export default function GitHubSection() {
         >
           <div className="flex items-center gap-3">
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
+              className="w-10 h-10 rounded-lg flex items-center justify-center bg-white shadow-sm"
               style={{
-                background: "rgba(255,255,255,0.05)",
                 border: "1px solid var(--border)",
               }}
             >
-              <GitHubIcon size={20} style={{ color: "var(--text-muted)" }} />
+              <GitHubIcon size={22} className="text-[#171515]" />
             </div>
             <div>
               <p

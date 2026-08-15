@@ -30,7 +30,7 @@ const issuerDomains: Record<string, string> = {
   "Coursera": "coursera.org",
   "MongoDB": "mongodb.com",
   "Topengineers": "https://icon.horse/icon/topengineers.co.in",
-  "EduSkills Foundation®": "https://eduskillsfoundation.org/wp-content/uploads/2020/07/EduSkills-Logo-1.png",
+  "EduSkills Foundation®": "eduskillsfoundation.org",
   "NPTEL": "https://icon.horse/icon/nptel.ac.in",
 };
 

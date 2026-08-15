@@ -31,7 +31,7 @@ export const experiences: ExperienceItem[] = [
     certificateId: "414f8b186f0e50891f26",
     certificateImage: "/certificates/Data Analytics Virtual Internship.pdf",
     logos: [
-      "https://eduskillsfoundation.org/wp-content/uploads/2020/07/EduSkills-Logo-1.png",
+      "https://www.google.com/s2/favicons?domain=eduskillsfoundation.org&sz=128",
       "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
     ]
   },
@@ -51,7 +51,7 @@ export const experiences: ExperienceItem[] = [
     certificateId: "d3c1b4e7f216f2f5a4b9c10bb7e5de62",
     certificateImage: "/certificates/google ai-ml internship.pdf",
     logos: [
-      "https://eduskillsfoundation.org/wp-content/uploads/2020/07/EduSkills-Logo-1.png",
+      "https://www.google.com/s2/favicons?domain=eduskillsfoundation.org&sz=128",
       "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
     ]
   },
