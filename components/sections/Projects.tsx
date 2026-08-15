@@ -22,12 +22,13 @@ function ProjectFolder({ project, isOpen, onToggle, index }: { project: Project;
         className="w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-white/5"
       >
         <div className="flex items-center gap-4">
-          <Folder className="text-white/50" size={24} />
+          <div className="w-10 h-10 shrink-0 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <GitHubIcon className="text-[#171515]" size={22} />
+          </div>
           <div>
             <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
               {project.title}
             </h3>
-            <p className="text-gray-400 text-xs md:text-sm mt-1">{project.period}</p>
           </div>
         </div>
         <div className="text-gray-400 shrink-0 ml-4">
@@ -104,7 +105,7 @@ function ProjectFolder({ project, isOpen, onToggle, index }: { project: Project;
 }
 
 export default function Projects() {
-  const [openProjectId, setOpenProjectId] = useState<string | null>(projects[0]?.id || null);
+  const [openProjectId, setOpenProjectId] = useState<string | null>(null);
 
   const handleToggle = (id: string) => {
     setOpenProjectId(openProjectId === id ? null : id);

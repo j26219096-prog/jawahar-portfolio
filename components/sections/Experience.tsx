@@ -47,17 +47,29 @@ export default function Experience() {
                 transition={{ delay: i * 0.1, duration: 0.45 }}
               >
                 {/* Icon node */}
-                <div className="relative shrink-0 flex flex-col items-center">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center z-10"
-                    style={{
-                      background: `${typeColor[exp.type]}18`,
-                      border: `1.5px solid ${typeColor[exp.type]}55`,
-                      color: typeColor[exp.type],
-                    }}
-                  >
-                    {typeIcon[exp.type]}
-                  </div>
+                <div className="relative shrink-0 flex flex-col items-center gap-2">
+                  {exp.logos ? (
+                    exp.logos.map((logo, idx) => (
+                      <div
+                        key={idx}
+                        className="w-11 h-11 bg-white rounded-xl flex items-center justify-center z-10"
+                        style={{ border: `1.5px solid ${typeColor[exp.type]}55` }}
+                      >
+                        <img src={logo} alt="Company Logo" className="w-6 h-6 object-contain rounded-sm" />
+                      </div>
+                    ))
+                  ) : (
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center z-10"
+                      style={{
+                        background: `${typeColor[exp.type]}18`,
+                        border: `1.5px solid ${typeColor[exp.type]}55`,
+                        color: typeColor[exp.type],
+                      }}
+                    >
+                      {typeIcon[exp.type]}
+                    </div>
+                  )}
                   {/* Line segment to next item */}
                   {i !== experiences.length - 1 && (
                     <div

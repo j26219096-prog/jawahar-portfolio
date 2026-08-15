@@ -29,7 +29,7 @@ export default function Achievements() {
         <SectionHeader
           label="Recognition"
           title="Achievements"
-          subtitle="Hackathon wins, certifications, and deployed projects — built and shipped."
+          subtitle="Hackathon , certifications, and deployed projects — built and shipped."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

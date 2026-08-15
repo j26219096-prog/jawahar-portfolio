@@ -23,6 +23,17 @@ function getIssuerColor(issuer: string): string {
   return "#8b949e";
 }
 
+const issuerDomains: Record<string, string> = {
+  "Google": "google.com",
+  "IBM": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+  "Amazon Web Services (AWS)": "aws.amazon.com",
+  "Coursera": "coursera.org",
+  "MongoDB": "mongodb.com",
+  "Topengineers": "https://icon.horse/icon/topengineers.co.in",
+  "EduSkills Foundation®": "https://eduskillsfoundation.org/wp-content/uploads/2020/07/EduSkills-Logo-1.png",
+  "NPTEL": "https://icon.horse/icon/nptel.ac.in",
+};
+
 export default function Certifications() {
   return (
     <section
@@ -39,7 +50,16 @@ export default function Certifications() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, i) => {
-            const color = getIssuerColor(cert.issuer);
+            const themeColor = getIssuerColor(cert.issuer);
+            const domainOrUrl = issuerDomains[cert.issuer];
+            
+            let logoSrc = "";
+            if (domainOrUrl) {
+              logoSrc = domainOrUrl.startsWith("http") 
+                ? domainOrUrl 
+                : `https://www.google.com/s2/favicons?domain=${domainOrUrl}&sz=128`;
+            }
+
             return (
               <motion.div
                 key={cert.id}
@@ -49,15 +69,22 @@ export default function Certifications() {
                 viewport={{ once: false, margin: "-50px" }}
                 transition={{ delay: i * 0.07, duration: 0.4 }}
               >
-                {/* Icon */}
+                {/* Icon / Logo */}
                 <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-white"
                   style={{
-                    background: `${color}15`,
-                    border: `1px solid ${color}30`,
+                    border: `1px solid ${themeColor}30`,
                   }}
                 >
-                  <Award size={17} style={{ color }} />
+                  {logoSrc ? (
+                    <img
+                      src={logoSrc}
+                      alt={cert.issuer}
+                      className="w-7 h-7 object-contain rounded-sm"
+                    />
+                  ) : (
+                    <Award size={18} style={{ color: themeColor }} />
+                  )}
                 </div>
 
                 {/* Name */}
@@ -92,16 +119,19 @@ export default function Certifications() {
 
                 {/* Verify link */}
                 {cert.verificationUrl && (
-                  <div className="mt-auto pt-2" style={{ borderTop: "1px solid var(--border)" }}>
+                  <div className="mt-auto pt-3">
                     <a
                       href={cert.verificationUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs transition-colors hover:text-[var(--accent-cyan)]"
-                      style={{ color: "var(--text-muted)" }}
+                      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium transition-colors hover:bg-white/5"
+                      style={{ 
+                        color: "var(--text-secondary)",
+                        border: "1px solid var(--border-hover)"
+                      }}
                     >
-                      <ExternalLink size={11} />
-                      Verify Certificate
+                      Show credential
+                      <ExternalLink size={14} />
                     </a>
                   </div>
                 )}
