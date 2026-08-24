@@ -20,13 +20,13 @@ export const projects: Project[] = [
     organization: "Open Source",
     period: "Jun 2026 – Jul 2026",
     shortDescription:
-      "A local end-to-end ELT pipeline simulating retail order flows — from Kafka ingestion through PySpark transforms to a PostgreSQL warehouse with a live Streamlit dashboard.",
+      "End-to-end ELT pipeline for e-commerce order analytics — Kafka → PySpark → Airflow + dbt → PostgreSQL, with a live Streamlit dashboard. Verified: 1,247 events processed in a full pipeline run, 7 dbt models, 34 data-quality tests (100% pass rate), 6-task Airflow DAG, <2 min end-to-end runtime.",
     description: [
-      "Designed and implemented a complete ELT pipeline modeled on e-commerce order workflows, simulating retail event patterns across ingestion, transformation, and warehouse loading stages.",
-      "Built a stream ingestion layer with Apache Kafka, using consumer groups to read order events with configurable fault tolerance settings.",
-      "Wrote PySpark transformation jobs to clean, deduplicate, and enrich raw event records, applying schema validation before loading.",
-      "Orchestrated the pipeline with Apache Airflow DAGs and structured data models with dbt, loading analytics-ready tables into a free-tier Neon PostgreSQL instance.",
-      "Enforced data quality checks using Great Expectations and built a Streamlit dashboard to surface GMV trends and data freshness metrics.",
+      "Designed and implemented a complete ELT pipeline modeled on e-commerce order workflows, covering stream ingestion, distributed transformation, analytics engineering, orchestration, and data quality validation.",
+      "Built a Kafka stream ingestion layer with consumer groups; wrote PySpark jobs to clean, deduplicate, and schema-validate raw event records before loading.",
+      "Orchestrated a 6-task Apache Airflow DAG and structured 7 dbt models to produce analytics-ready tables in a Neon serverless PostgreSQL warehouse.",
+      "Enforced 34 automated Great Expectations data-quality tests (100% pass rate); processed 1,247 streaming events (500 orders + 747 payments) in a verified full-pipeline test run with end-to-end runtime under 2 minutes.",
+      "Streamlit dashboard and Neon PostgreSQL are live and publicly accessible; Kafka, PySpark, and Airflow run locally via Docker during development and demo.",
     ],
     techStack: [
       "Python",
