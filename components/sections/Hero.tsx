@@ -29,7 +29,8 @@ export default function Hero() {
         {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-8 relative"
         >
@@ -38,6 +39,7 @@ export default function Hero() {
               src="/images/profile-v2.png"
               alt={profile.name}
               fill
+              sizes="(max-width: 768px) 192px, 224px"
               className="object-cover object-[center_32%]"
               priority
             />
@@ -47,8 +49,9 @@ export default function Hero() {
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: 0.15, duration: 0.6 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-white"
         >
           Hi, I&apos;m {profile.name}
@@ -57,8 +60,9 @@ export default function Hero() {
         {/* Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
           className="text-lg md:text-xl lg:text-2xl font-medium tracking-[0.2em] uppercase text-gray-300 mb-8"
         >
           {profile.headline}
@@ -67,8 +71,9 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: 0.45, duration: 0.6 }}
           className="flex flex-wrap gap-4 justify-center"
         >
           <a
@@ -90,8 +95,9 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-10"
         onClick={() =>
           document
