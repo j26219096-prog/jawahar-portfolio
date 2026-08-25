@@ -166,7 +166,7 @@ export default function Certifications() {
         </div>
 
         {/* Toggle button */}
-        <div className="flex justify-center mt-12 mb-2">
+        <div className="flex justify-center mt-16 mb-4">
           <button
             onClick={() => setShowAdditional((v) => !v)}
             className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-white/8"

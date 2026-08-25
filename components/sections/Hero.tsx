@@ -28,9 +28,9 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center px-4 w-full">
         {/* Profile Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.8, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-8 relative"
         >
           <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl relative bg-zinc-900">
