@@ -88,9 +88,9 @@ export default function GitHubSection() {
         >
         <motion.div
           className="flex flex-col sm:flex-row items-center gap-4 glass-card p-5 mt-10 cursor-pointer hover:bg-white/5 transition-colors duration-200"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-60px" }}
           transition={{ duration: 0.4 }}
         >
           <div className="flex items-center gap-3">
